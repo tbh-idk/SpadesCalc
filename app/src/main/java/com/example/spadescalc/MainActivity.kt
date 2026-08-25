@@ -174,127 +174,111 @@ fun Screen(viewModel: SpadesViewModel = viewModel()) {
     Card(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant,
-        )
+        ),
+        modifier = Modifier.fillMaxHeight()
     ) {
-        Row(modifier = Modifier.statusBarsPadding()) {
-            Box(modifier = Modifier.weight(1f).padding(3.dp)) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.secondary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        FilledTonalButton(
-                            onClick = {},
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                disabledContainerColor = MaterialTheme.colorScheme.secondary,
-                                disabledContentColor = MaterialTheme.colorScheme.onSecondary
+        Column(modifier = Modifier.statusBarsPadding()) {
+            Row() {
+                Box(modifier = Modifier.weight(1f).padding(3.dp)) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.secondary,
                             ),
-                            enabled = false
+                            modifier = Modifier.fillMaxWidth().padding(3.dp)
                         ) {
-                            Text(text = "GROUP 1", fontSize = 24.sp)
+                            FilledTonalButton(
+                                onClick = {},
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = ButtonDefaults.filledTonalButtonColors(
+                                    disabledContainerColor = MaterialTheme.colorScheme.secondary,
+                                    disabledContentColor = MaterialTheme.colorScheme.onSecondary
+                                ),
+                                enabled = false
+                            ) {
+                                Text(text = "GROUP 1", fontSize = 24.sp)
+                            }
                         }
-                    }
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.primary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        Group1Selections(scorecard)
-                    }
-
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surfaceVariant
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        FilledTonalButton(
-                            onClick = { scorecard.calculateG1() },
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                contentColor = MaterialTheme.colorScheme.surfaceVariant
-                            )
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.primary,
+                            ),
+                            modifier = Modifier.fillMaxWidth().padding(3.dp)
                         ) {
-                            Text(text = "Calculate", fontSize = 22.sp)
+                            Group1Selections(scorecard)
                         }
                     }
 
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.tertiary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        Group1Points(scorecard)
+                }
+                Box(modifier = Modifier.weight(1f).padding(3.dp)) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.secondary,
+                            ),
+                            modifier = Modifier.fillMaxWidth().padding(3.dp)
+                        ) {
+                            FilledTonalButton(
+                                onClick = {},
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = ButtonDefaults.filledTonalButtonColors(
+                                    disabledContainerColor = MaterialTheme.colorScheme.secondary,
+                                    disabledContentColor = MaterialTheme.colorScheme.onSecondary
+                                ),
+                                enabled = false
+                            ) {
+                                Text(text = "GROUP 2", fontSize = 24.sp)
+                            }
+                        }
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.primary,
+                            ),
+                            modifier = Modifier.fillMaxWidth().padding(3.dp)
+                        ) {
+                            Group2Selections(scorecard)
+                        }
                     }
                 }
-
             }
-//            VerticalDivider(
-//                thickness = 2.dp,
-//                modifier = Modifier.padding(1.dp)
-//            )
-            Box(modifier = Modifier.weight(1f).padding(3.dp)) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.secondary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        FilledTonalButton(
-                            onClick = {},
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                disabledContainerColor = MaterialTheme.colorScheme.secondary,
-                                disabledContentColor = MaterialTheme.colorScheme.onSecondary
-                            ),
-                            enabled = false
-                        ) {
-                            Text(text = "GROUP 2", fontSize = 24.sp)
-                        }
-                    }
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.primary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        Group2Selections(scorecard)
-                    }
 
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        FilledTonalButton(
-                            onClick = { scorecard.calculateG2() },
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                contentColor = MaterialTheme.colorScheme.surfaceVariant
-                            )
-                        ) {
-                            Text(text = "Calculate", fontSize = 22.sp)
-                        }
-                    }
-
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.tertiary,
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(3.dp)
-                    ) {
-                        Group2Points(scorecard)
-                    }
+            Card(
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant
+                ),
+                modifier = Modifier.fillMaxWidth().padding(3.dp)
+            ) {
+                FilledTonalButton(
+                    onClick = { scorecard.calculateG1(); scorecard.calculateG2() },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.filledTonalButtonColors(
+                        containerColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                        contentColor = MaterialTheme.colorScheme.surfaceVariant
+                    )
+                ) {
+                    Text(text = "Calculate", fontSize = 22.sp)
                 }
+            }
+
+            Row() {
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.tertiary,
+                    ),
+                    modifier = Modifier.weight(1f).padding(3.dp)
+                ) {
+                    Group1Points(scorecard)
+                }
+
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.tertiary,
+                    ),
+                    modifier = Modifier.weight(1f).padding(3.dp)
+                ) {
+                    Group2Points(scorecard)
+                }
+
             }
         }
     }
