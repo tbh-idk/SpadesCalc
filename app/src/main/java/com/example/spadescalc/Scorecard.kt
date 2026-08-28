@@ -49,12 +49,12 @@ class Scorecard {
         if ((group1Player1HandBids == 0) or (group1Player2HandBids == 0)) {
             if ((group1Player1HandBids == 0) and (group1Player1HandTricks == 0)) {
                 group1TotalPoints += 100
-            } else {
+            } else if ((group1Player1HandBids == 0) and (group1Player1HandTricks != 0)) {
                 group1TotalPoints -= 100
             }
             if ((group1Player2HandBids == 0) and (group1Player2HandTricks == 0)) {
                 group1TotalPoints += 100
-            } else {
+            } else if ((group1Player2HandBids == 0) and (group1Player2HandTricks != 0)) {
                 group1TotalPoints -= 100
             }
         }
@@ -75,12 +75,12 @@ class Scorecard {
         if ((group2Player1HandBids == 0) or (group2Player2HandBids == 0)) {
             if ((group2Player1HandBids == 0) and (group2Player1HandTricks == 0)) {
                 group2TotalPoints += 100
-            } else {
+            } else if ((group2Player1HandBids == 0) and (group2Player1HandTricks != 0)) {
                 group2TotalPoints -= 100
             }
             if ((group2Player2HandBids == 0) and (group2Player2HandTricks == 0)) {
                 group2TotalPoints += 100
-            } else {
+            } else if ((group2Player2HandBids == 0) and (group2Player2HandTricks != 0)) {
                 group2TotalPoints -= 100
             }
         }
